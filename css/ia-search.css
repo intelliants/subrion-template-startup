@@ -1,0 +1,30 @@
+.members-filter + hr {
+  border-top-color: #ddd;
+}
+.alpha-sorting {
+  text-align: center;
+}
+.members-filter .alpha-sorting {
+  text-align: left;
+}
+.alpha-sorting a,
+.alpha-sorting span {
+  min-width: 20px;
+  margin-bottom: 5px;
+}
+.group-filter h4 {
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+.group-filter .nav-stacked {
+  margin-bottom: 0;
+}
+.highlight {
+  background: #fffc00;
+}
+.search-results {
+  margin-bottom: 20px;
+}
+.search-results .ia-item .thumbnail {
+  margin-bottom: 10px;
+}

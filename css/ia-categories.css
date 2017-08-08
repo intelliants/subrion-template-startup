@@ -1,0 +1,19 @@
+.ia-categories {
+  margin: 14px 0;
+}
+.cat-wrap {
+  padding: 4px;
+}
+.subcat-wrap {
+  line-height: 14px;
+  margin-bottom: 12px;
+}
+.subcat-wrap a {
+  font-size: 12px;
+  color: #bbb;
+  text-decoration: underline;
+}
+.subcat-wrap a:hover {
+  color: #aaa;
+  text-decoration: none;
+}
