@@ -1,16 +1,16 @@
-# subrion-template-kickstart
+# subrion-template-startup
 Default template for Subrion CMS 4.x with style support for every Subrion plugin and package.
 
 ## Installation
-1. Download latest release https://github.com/intelliants/subrion-template-kickstart/releases
+1. Download latest release https://github.com/intelliants/subrion-template-startup/releases
 2. Unpack contents of archive to `[root]/templates` folder
-3. Rename `subrion-template-kickstart-master` to `kickstart`
+3. Rename `subrion-template-startup-master` to `startup`
 4. Activate template in admin dashboard.
 
 Or you can
 ```
 cd [root]/templates # where root is the location of subrion core
-git clone https://github.com/intelliants/subrion-template-kickstart.git ./kickstart
+git clone https://github.com/intelliants/subrion-template-startup.git ./startup
 ```
 Voila! Just activate it in your Dashboard / Extensions / Templates
 
@@ -18,11 +18,11 @@ Voila! Just activate it in your Dashboard / Extensions / Templates
 
 > This manual covers development of visual styles. To learn more about Subrion template structure and configuration options, please refer to Subrion Extensions wiki page: `URL_TO_SUBRION_WIKI`
 
-The Kickstart template is setup to use [Gulp](http://gulpjs.com/) to compile LESS (with source maps), run it through [AutoPrefixr](https://github.com/postcss/autoprefixer), optimize images, and syncs changes across local development devices with [BrowserSync](https://browsersync.io/docs/gulp/), with flexibility to add any additional tasks via the Gulpfile. Alternatively, you can use [Prepros](https://prepros.io/) or whatever else y ou prefer to compile the LESS and manage the JavaScript.
+The startup template is setup to use [Gulp](http://gulpjs.com/) to compile LESS (with source maps), run it through [AutoPrefixr](https://github.com/postcss/autoprefixer), optimize images, and syncs changes across local development devices with [BrowserSync](https://browsersync.io/docs/gulp/), with flexibility to add any additional tasks via the Gulpfile. Alternatively, you can use [Prepros](https://prepros.io/) or whatever else y ou prefer to compile the LESS and manage the JavaScript.
 
 ### Prerequisites
 
-In root folder of Kickstart template run:
+In root folder of startup template run:
 ```
 npm i
 ```
@@ -48,7 +48,7 @@ Compiles LESS and optimizes images.
 If you don't want to use Gulp task-runner to process template files, you can use any GUI compilers like [Prepros](https://prepros.io/), [Koala](http://koala-app.com/) or [Simpless](https://wearekiss.com/simpless).
 
 What is important:
-* The main file for compilation is `iabootstrap.less`. It should be compiled to `[root]/templates/kickstart/css/iabootstrap.css`
+* The main file for compilation is `iabootstrap.less`. It should be compiled to `[root]/templates/startup/css/iabootstrap.css`
 
 ### Template styles/elements page
 

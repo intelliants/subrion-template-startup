@@ -1,0 +1,140 @@
+.inventory {
+  background: @inventory-bg;
+  padding: 10px 0;
+}
+
+
+
+//
+// Inventory search
+// --------------------------------------------------
+
+.search-inventory {
+  margin: 0 20px 0 0;
+  position: relative;
+  padding: 0 0 0 15px;
+
+  &.pull-right {
+    margin: 0 0 0 20px;
+  }
+
+  // input {
+  //   background: none;
+  //   border: 0 none;
+  //   line-height: @inventory-height;
+  //   width: 100px;
+  //   padding: 0;
+  //   color: @inventory-text-color;
+
+  input {
+    padding:0 30px 0 5px;
+    box-shadow: none;
+    background: #524b5c;
+    border-radius: 4px;
+    border: none;
+    width: 190px;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    line-height: @inventory-height;
+
+  //   &[type="text"] {
+  //   background-color : #fff; 
+  // }
+
+    .placeholder(fade(@inventory-text-color, 90%));
+
+    &:focus {
+      outline: 0 none;
+      background-color : #fff;
+      .placeholder(fade(@inventory-text-color, 90%));
+    }
+  }
+
+  button {
+    border: 0;
+    background: none;
+    color: @inventory-link-color;
+    line-height: @inventory-height;
+    padding: 0 15px 0 15px;
+    position: absolute;
+    right: 0;
+    top: 35%;
+    margin: -10px 0 0 0;
+
+    &:focus {
+      outline: 0 none;
+    }
+
+    &:hover {
+      background: fade(#fff, 3%);
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    
+    &.pull-right {
+      margin: 0 20px 0 0;
+      float: left !important;
+    }
+  }
+}
+
+
+
+//
+// Inventory navs
+// --------------------------------------------------
+
+.nav-inventory {
+  margin: 0 20px 0 0;
+  padding: 0;
+  list-style-type: none;
+
+  > li {
+    float: left;
+    margin: 0 10px 0 0;
+
+    > a {
+      &,
+      &:focus {
+        display: block;
+        line-height: @inventory-height;
+        color: @inventory-link-color;
+        font-size: 14px;
+        text-decoration: underline;
+      }
+
+      &:hover {
+        color: @inventory-link-hover-color;
+        text-decoration: none;
+      }
+    }
+
+    &.active > a,
+    &.active > a:focus,
+    &.active > a:hover {
+      color: @inventory-link-active-color;
+      text-decoration: none;
+    }
+  }
+
+  &.pull-right {
+    margin: 0;
+
+    > li {
+      margin: 0 0 0 10px;
+    }
+  }
+}
+
+
+//
+// Inventory text
+// --------------------------------------------------
+
+.text-inventory {
+  margin: 0;
+  line-height: @inventory-height;
+  color: @inventory-text-color;
+}

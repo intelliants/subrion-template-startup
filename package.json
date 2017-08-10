@@ -1,7 +1,7 @@
 {
-  "name": "subrion-template-kickstart",
+  "name": "subrion-template-startup",
   "version": "1.0.0",
-  "description": "Subrion Kickstart Front-end template",
+  "description": "Subrion startup Front-end template",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

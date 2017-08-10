@@ -2,40 +2,25 @@
 // Breadcrumbs
 // --------------------------------------------------
 
-.breadcrumbs {
-  padding: 10px 0;
-  background: #f0f0f0;
 
-  &__actions {
-    float: right;
-  }
-}
-
-.nav-breadcrumbs {
-  list-style-type: none;
+.breadcrumb {
+  padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
   margin: 0;
-  padding: 0;
-  float: left;
+  list-style: none;
+  border-radius: @border-radius-base;
+  font-size: 12px;
 
   > li {
-    margin: 0;
-    float: left;
+    display: inline-block;
 
-    > a {
-      color: @breadcrumbLinkColor;
-
-      &:hover {
-        color: @breadcrumbLinkHoverColor;
-      }
-    }
-
-    > .divider {
+    + li:before {
+      content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
       padding: 0 5px;
-      color: @breadcrumbDividerColor;
+      color: @breadcrumb-color;
     }
+  }
 
-    &.active {
-      color: @breadcrumbActiveColor;
-    }
+  > .active {
+    color: @breadcrumb-active-color;
   }
 }

@@ -4,44 +4,54 @@
 
 
 // Core variables and mixins
-@import "bootstrap/variables.less"; // Modify this for custom colors, font-sizes, etc
-@import "ia-variables.less";
+@import "bootstrap/variables.less";
+@import "vars.less";
 @import "bootstrap/mixins.less";
 
-// CSS Reset
-@import "bootstrap/reset.less";
+// Reset and dependencies
+@import "bootstrap/normalize.less";
+@import "bootstrap/print.less";
 
-// Grid system and page structure
+// Core CSS
 @import "bootstrap/scaffolding.less";
-@import "bootstrap/grid.less";
-@import "bootstrap/layouts.less";
-
-// Base CSS
 @import "bootstrap/type.less";
 @import "bootstrap/code.less";
-@import "bootstrap/forms.less";
+@import "bootstrap/grid.less";
 @import "bootstrap/tables.less";
-
-// Components: common
-@import "font-awesome/font-awesome.less";
-@import "bootstrap/wells.less";
-
-// Components: Buttons
+@import "bootstrap/forms.less";
 @import "bootstrap/buttons.less";
 
-// Components: Misc
+// Components
+@import "bootstrap/button-groups.less";
+@import "bootstrap/input-groups.less";
+@import "bootstrap/navs.less";
+@import "bootstrap/labels.less";
+@import "bootstrap/badges.less";
 @import "bootstrap/thumbnails.less";
+@import "bootstrap/alerts.less";
 @import "bootstrap/media.less";
-@import "bootstrap/labels-badges.less";
+@import "bootstrap/list-group.less";
+@import "bootstrap/panels.less";
+@import "bootstrap/responsive-embed.less";
+@import "bootstrap/wells.less";
+@import "bootstrap/close.less";
 
 // Utility classes
-@import "bootstrap/utilities.less"; // Has to be last to override when necessary
+@import "bootstrap/utilities.less";
+@import "bootstrap/responsive-utilities.less";
 
-// iaBootstrap classes
-@import "ia-utilities.less";
+// Additional components
+@import "thirdparty/fontawesome/font-awesome.less";
+
+// Intelli components
+@import "intelli/boxes.less";
+@import "intelli/items.less";
+
+// Global styles and layout
+@import "theme.less";
+@import "global.less";
 
 // Tweaks for perfect layout
-
 body {
 	padding: 20px;
-} 
+}

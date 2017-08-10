@@ -1,56 +1,76 @@
-$(function()
-{
-	// Sticky navbar
+$(function() {
 
-	if($('.navigation--sticky').length) {
-		var $window = $(window),
-			$navbar = $('.navigation--sticky'),
-			$inventory = $('.inventory'),
-			navbarHeight = $navbar.outerHeight(),
-			navbarPos = $navbar.position();
-
-		$window.scroll(function () {
-			if($window.scrollTop() >= (navbarPos.top)) {
-				$navbar.addClass('is-sticky');
-				$inventory.css('margin-bottom', navbarHeight);
-			} else {
-				$navbar.removeClass('is-sticky');
-				$inventory.removeAttr('style');
-			}
-		});	
-	}
-
-	// Menu button on mobile devices
-
-	$('.nav-toggle').on('click', function (e) {
-		e.preventDefault();
+	// toggle tooltips
+	$('[data-toggle="tooltip"]').tooltip({
+		container: 'body'
 	});
 
-	// Back to top button.
+	// sticky navbar
+	if ($('.navbar-sticky').length) {
+		var stickyToggle = function(sticky, stickyWrapper, scrollElement) {
+			var stickyHeight = sticky.outerHeight();
+			var stickyTop = stickyWrapper.offset().top;
 
-	var $backToTopBtn = $('<a href="#" id="backToTop"><i class="icon-chevron-up"></i></a>'),
-		whereYouWantYourButtonToAppear = 200,
-		$window = $(window);
+			if (scrollElement.scrollTop() >= stickyTop) {
+				stickyWrapper.height(stickyHeight);
+				sticky.addClass("is-sticky");
+			}
+			else {
+				sticky.removeClass("is-sticky");
+				stickyWrapper.height('auto');
+			}
+		};
 
-	$('body').append($backToTopBtn);
+		// Find all data-toggle="sticky-onscroll" elements
+		$('.navbar-sticky').each(function() {
+			var sticky = $(this);
+			var stickyWrapper = $('<div>').addClass('sticky-wrapper'); // insert hidden element to maintain actual top offset on page
+			sticky.before(stickyWrapper);
 
-	$window.scroll(function () {
-		var position = $window.scrollTop();
-		
-		if(position > whereYouWantYourButtonToAppear) {
-			$backToTopBtn.stop(true, true).fadeIn();
+			// Scroll & resize events
+			$(window).on('scroll.sticky-onscroll resize.sticky-onscroll', function() {
+				stickyToggle(sticky, stickyWrapper, $(this));
+			});
+
+			// On page load
+			stickyToggle(sticky, stickyWrapper, $(window));
+		});
+	}
+
+	// search toggle
+	$('.js-search-navbar-toggle').click(function(e) {
+		e.preventDefault();
+
+		var $this = $(this);
+
+		$('body, .navbar').append('<div class="search-navbar-backdrop"></div>');
+
+		$this.next().addClass('is-visible');
+
+		setTimeout(function() {
+			$this.next().find('input').focus();
+		}, 200);
+	});
+
+	$('body').on('click', '.search-navbar-backdrop', function(e) {
+		$('.search-navbar .input-group').removeClass('is-visible');
+		$('.search-navbar-backdrop').remove();
+	});
+
+	// back to top button
+	var $backToTopBtn = $('.js-back-to-top');
+
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 200) {
+			$backToTopBtn.addClass('on');
 		} else {
-			$backToTopBtn.stop(true, true).fadeOut();
+			$backToTopBtn.removeClass('on');
 		}
 	});
 
-	$('body').on('click', '#backToTop', function (e) {
-		e.preventDefault();
-
+	$backToTopBtn.on('click', function(e){
 		$('html, body').animate({
 			scrollTop: 0
 		}, 'fast');
-
-		$(this).stop(true, true).fadeOut();
-	});
+	})
 });
