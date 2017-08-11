@@ -70,6 +70,9 @@
     width: 100%;
     background: fade(@brand-dark, 70%);
     .box-shadow(0 1px 6px rgba(0,0,0,.18));
+    @media (max-width: @grid-float-breakpoint) {
+      background: fade(@brand-dark, 100%);
+    }
 
     .navbar-social {
       margin: 25px 0 25px 40px;
@@ -194,14 +197,7 @@
         background: #ccc;
         border-radius: 4px;
         padding: 0;
-        >li {
-          &:first-child:hover a {
-            border-radius: 4px 4px 0 0;
-          }
-          &:last-child:hover a {
-            border-radius: 0 0 4px 4px;
-          }
-        }
+        overflow: hidden;
         > li > a {
           font-weight: 600;
         }

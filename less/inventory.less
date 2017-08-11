@@ -90,6 +90,29 @@
   margin: 0 20px 0 0;
   padding: 0;
   list-style-type: none;
+  .dropdown-menu {
+    border-radius: 4px;
+    padding: 0;
+    overflow: hidden;
+    // >li {
+    //       &:first-child:hover a {
+    //         border-radius: 4px 4px 0 0;
+    //       }
+    //       &:last-child:hover a {
+    //         border-radius: 0 0 4px 4px;
+    //       }
+    //     }
+    .active {
+      > a {
+        color: @dropdown-link-color;
+        background: darken(@dropdown-link-hover-bg, 5%);
+        &:hover,
+        &:focus {
+          background-color: darken(@dropdown-link-hover-bg, 5%);
+        }
+      }
+    }
+  }
 
   > li {
     float: left;
